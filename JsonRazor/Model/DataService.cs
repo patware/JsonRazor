@@ -8,7 +8,7 @@ namespace JsonRazor.Model
         {
             // Use this to connect to the actual data service
 
-            var item = new DataItem("{FirstName=\"First Name\"}", "First Name: @FirstName" );
+            var item = new DataItem("{FirstName:\"First Name\"}", "First Name: @FirstName" );
             callback(item, null);
         }
     }

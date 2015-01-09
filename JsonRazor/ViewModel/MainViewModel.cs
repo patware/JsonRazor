@@ -59,7 +59,17 @@ namespace JsonRazor.ViewModel
 
         private void parseModel()
         {
-            Messages = "Model Parsed";
+            try
+            {
+                _parsedModel = Newtonsoft.Json.JsonConvert.DeserializeObject(this.Model);
+                Messages = "Model Parsed";
+            }
+            catch (System.Exception ex)
+            {
+                Messages = ex.Message;
+            }
+            
+            
         }
 
         private void applyTemplate()
