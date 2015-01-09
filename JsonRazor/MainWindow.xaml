@@ -33,8 +33,8 @@
         <TextBlock Grid.Row="0" Grid.Column="0">Model</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="1">Template</TextBlock>
 
-        <TextBox Grid.Row="1" Grid.Column="0" AcceptsTab="True" AcceptsReturn="True" Text="{Binding Path=Model}"></TextBox>
-        <TextBox Grid.Row="1" Grid.Column="1" AcceptsTab="True" AcceptsReturn="True" Text="{Binding Path=Template}"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="0" AcceptsTab="True" AcceptsReturn="True" Text="{Binding Path=Model, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1" AcceptsTab="True" AcceptsReturn="True" Text="{Binding Path=Template, UpdateSourceTrigger=PropertyChanged}"></TextBox>
 
         <TextBox Grid.Row="2" Grid.Column="0" AcceptsTab="True" AcceptsReturn="True" Text="{Binding Path=Messages}"></TextBox>
         <TextBox Grid.Row="2" Grid.Column="1" AcceptsTab="True" AcceptsReturn="True" Text="{Binding Path=Result}"></TextBox>
