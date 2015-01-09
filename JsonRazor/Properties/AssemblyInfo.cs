@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("JsonRazor")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Chambre des communes")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("JsonRazor")]
-[assembly: AssemblyCopyright("Copyright © Chambre des communes 2015")]
+[assembly: AssemblyCopyright("Copyright © Patrice Calvé 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
