@@ -7,12 +7,19 @@ namespace JsonRazor.Model
 {
     public class DataItem
     {
-        public DataItem(string title)
+        public DataItem(string model, string template)
         {
-            Title = title;
+            Model = model;
+            Template = template;
         }
 
-        public string Title
+        public string Model
+        {
+            get;
+            private set;
+        }
+
+        public string Template
         {
             get;
             private set;
