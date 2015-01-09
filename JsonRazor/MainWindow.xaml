@@ -20,6 +20,7 @@
 
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -28,6 +29,15 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
+
+        <TextBlock Grid.Row="0" Grid.Column="0">Model</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="1">Template</TextBlock>
+
+        <TextBox Grid.Row="1" Grid.Column="0" AcceptsTab="True" AcceptsReturn="True">Model</TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1" AcceptsTab="True" AcceptsReturn="True">Template</TextBox>
+
+        <TextBox Grid.Row="2" Grid.Column="0" AcceptsTab="True" AcceptsReturn="True">Messages</TextBox>
+        <TextBox Grid.Row="2" Grid.Column="1" AcceptsTab="True" AcceptsReturn="True">Result</TextBox>
 
     </Grid>
 </Window>
