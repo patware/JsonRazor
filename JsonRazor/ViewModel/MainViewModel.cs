@@ -12,7 +12,7 @@ namespace JsonRazor.ViewModel
     public class MainViewModel : ViewModelBase
     {
         private readonly IDataService _dataService;
-        private object _parsedModel;
+        private dynamic _parsedModel;
         
 
         /// <summary>
@@ -74,7 +74,23 @@ namespace JsonRazor.ViewModel
 
         private void applyTemplate()
         {
-            Result = "Template Executed";
+            try
+            {
+                Result = RazorEngine.Razor.Parse(Template, _parsedModel);
+            }
+            catch (RazorEngine.Templating.TemplateParsingException ex)
+            {
+                Result = ex.Message;
+            }
+            catch (RazorEngine.Templating.TemplateCompilationException ex)
+            {
+                Result = ex.Message;
+            }
+            catch (System.Exception ex)
+            {
+                Result = ex.Message;
+            }
+            
         }
 
         ////public override void Cleanup()
