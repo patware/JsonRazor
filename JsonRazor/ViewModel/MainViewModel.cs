@@ -13,6 +13,7 @@ namespace JsonRazor.ViewModel
     {
         private readonly IDataService _dataService;
         private dynamic _parsedModel;
+        private const string JsonRazorCompiledTemplate = "JsonRazorCompiledTemplate";
         
 
         /// <summary>
@@ -55,13 +56,16 @@ namespace JsonRazor.ViewModel
             }
         }
 
+
         
 
         private void parseModel()
         {
             try
             {
-                _parsedModel = Newtonsoft.Json.JsonConvert.DeserializeObject(this.Model);
+                dynamic d = Newtonsoft.Json.Linq.JObject.Parse(this.Model);
+                System.Console.WriteLine(d.FirstName);
+                _parsedModel = d;
                 Messages = "Model Parsed";
             }
             catch (System.Exception ex)
@@ -76,7 +80,7 @@ namespace JsonRazor.ViewModel
         {
             try
             {
-                Result = RazorEngine.Razor.Parse(Template, _parsedModel);
+                Result = RazorEngine.Razor.Parse(this.Template, _parsedModel);
             }
             catch (RazorEngine.Templating.TemplateParsingException ex)
             {
@@ -85,7 +89,7 @@ namespace JsonRazor.ViewModel
             catch (RazorEngine.Templating.TemplateCompilationException ex)
             {
                 Result = ex.Message;
-            }
+            }           
             catch (System.Exception ex)
             {
                 Result = ex.Message;

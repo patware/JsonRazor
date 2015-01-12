@@ -9,7 +9,7 @@ namespace JsonRazor.Design
         {
             // Use this to create design time data
 
-            var item = new DataItem("{'FirstName':'First Name'}", "First Name: @Model.FirstName");
+            var item = new DataItem("{'FirstName':'ABC'}", "First Name: @Model[\"FirstName\"]");
             callback(item, null);
         }
     }
